@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Car estimator</title>
+		<meta charset="UTF-8">
+		<link href="static/style_main.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<p id="author">Розробив Орлов Ф. у рамках виконання кваліфікаційної роботи магістра.</p>
+		<h1 align="center">Car price estimator</h1>
+		<p id="first">Ця програма створена для оцінки вартості автомобіля на вторичному ринку в залежності від його характеристик.</p>
+		<!--<img src="choose_auto.gif" alt=”animated” align="middle" height=350px> -->
+		<img id="expert" src="static/expert.jpg" alt=”animated” align="middle" height=330px>
+		</a> 
+		<p>Для оцінки вартості авто заповніть усі поля та нажміть на кнопку<span id="tolst">"Розрахувати"</span></p>
+		<div name="data-input">
+			<form class="main_form" id="input-form" method="POST" action="/get-price">
+				<p>Виробник:				<select name = "producer">
+				{% for item in cat_factors[0] %}
+					<option>{{ item }}</option>
+				{% endfor %}
+				</select></p>
+				<p>Модель: 				<select name = "model">
+				{% for item in cat_factors[1] %}
+					<option>{{ item }}</option>
+				{% endfor %}
+				</select></p>
+				<p>Рік выпуску: <input type="number" name="year" min="1900" max="2020" required></p>
+				<p>Пробіг (тис.км): <input type="number" name="mileage" min="0" max="1000" required></p>
+				<p>Об'єм (літрів): <input type="number" name="volume" min="0" max="50" step="0.01" required></p>
+				<p>Паливо: 				<select name = "fuel">
+				{% for item in cat_factors[2] %}
+					<option>{{ item }}</option>
+				{% endfor %}
+				</select></p>
+				<p>Коробка передач: 				<select name = "transmission">
+				{% for item in cat_factors[3] %}
+					<option>{{ item }}</option>
+				{% endfor %}
+				</select></p>
+				<p>Привід: <select name = "powertrain">
+				{% for item in cat_factors[4] %}
+					<option>{{ item }}</option>
+				{% endfor %}
+				</select></p>
+				<p>Опис авто: <textarea name = "description" cols="40" rows="6">Введіть опис авто...</textarea></p>
+				<p>Тип кузова: 				<select name = "body">
+				{% for item in cat_factors[5] %}
+					<option>{{ item }}</option>
+				{% endfor %}
+				</select></p>
+				<p>Область продавця: 				<select name = "region">
+				{% for item in cat_factors[6] %}
+					<option>{{ item }}</option>
+				{% endfor %}
+				</select></p>
+				<p class="td_bold">Опції стану авто: </p>
+				<p>
+				{% for item in cat_factors[7] %}
+					<label><input type="checkbox" name="condition" value = "{{item}}">{{item}}</label>
+				{% endfor %}
+				</p>
+				<p class="td_bold">Опції безпеки авто: </p>
+				<p>
+				{% for item in cat_factors[8] %}
+					<label><input type="checkbox" name="safety" value = "{{item}}">{{item}}</label>
+				{% endfor %}
+				</p>
+				<p class="td_bold">Опції комфорту авто: </p>
+				<p>
+				{% for item in cat_factors[9] %}
+					<label><input type="checkbox" name="comfort" value = "{{item}}">{{item}}</label>
+				{% endfor %}
+				</p>
+				<p class="td_bold">Опції мультимедіа авто: </p>
+				<p>
+				{% for item in cat_factors[10] %}
+					<label><input type="checkbox" name="multimedia" value = "{{item}}">{{item}}</label>
+				{% endfor %}
+				</p>
+				<p class="td_bold">Інші опції авто: </p>
+				<p>
+				{% for item in cat_factors[11] %}
+					<label><input type="checkbox" name="other" value = "{{item}}">{{item}}</label>
+				{% endfor %}
+				</p>
+				<p class="td_bold">Теги: </p>
+				<p>
+				{% for item in cat_factors[12] %}
+					<label><input type="checkbox" name="tags" value = "{{item}}">{{item}}</label>
+				{% endfor %}
+				</p>
+				<p>Кіл-сть дверей: <input type="number" name="doors" min="2" max="7" required></p>
+				<p>Кіл-сть місць: <input type="number" name="seats" min="1" max="20" required></p>
+				<input type="submit" value="Розрахувати ціну" id="button">
+			</form>			
+		<div>
+	</body>
+</html>

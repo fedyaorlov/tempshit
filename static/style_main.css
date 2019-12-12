@@ -1,0 +1,43 @@
+html{
+	font-family: Helvetica;
+	background-color:#BCBCBC;
+	text-align: justify;
+	}
+body{
+	width: 880px; 
+	margin: auto;
+	}
+#expert{
+	margin-left: 130px; 
+	margin-right: auto;
+	}
+p{
+	font-size: 16px
+	}
+
+#first{
+	font-size: 18px
+	}
+
+#button{
+	margin-left: 330px;
+	margin-bottom: 40px;
+	margin-top: 40px;
+	padding: 10px;
+	font-size: 17px;
+	background-color:#E97A7A;
+	font-weight: bold;
+	}
+
+#tolst{
+	font-weight: bold;
+	}
+
+.td_bold{
+	font-weight: 600;
+	text-decoration: underline;
+}
+#author{
+	text-align: right;
+	font-style: italic;
+}

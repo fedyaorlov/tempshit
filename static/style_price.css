@@ -1,0 +1,59 @@
+html{
+	font-family: Helvetica;
+	background-color:#BCBCBC;
+	text-align: justify;
+	}
+body{
+	width: 880px; 
+	margin: auto;
+	}
+p{
+	font-size: 18px
+	}
+
+#expert{
+	margin-left: 130px; 
+	margin-right: auto;
+	}
+th{
+	 text-align: center;
+	}
+td{
+	text-align: left;
+	font-size: 14px}
+	
+table {
+  border-collapse: collapse;
+  margin-left:10px; 
+  margin-bottom:30px
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+th, td{
+	padding:10px
+	}
+	
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+  background-color: #85C65A;
+  color: white;
+}
+#author{
+	text-align: right;
+	font-style: italic;
+}
+.table_title{
+	font-weight: bold;
+}
+#fin_price{
+	color: #E64646;
+	text-decoration: underline;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	}
+.td_bold{
+	font-weight: 600
+	}

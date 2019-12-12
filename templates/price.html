@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	   <title>Car estimator</title>
+	   <meta charset="UTF-8">
+	   <link href="static/style_price.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>  
+		<p id="author">Розробив Орлов Ф. у рамках виконання кваліфікаційної роботи магістра.</p>
+		<h1 align="center">Car price estimator</h1>
+		<img src="static/expert.jpg" alt=”animated” align="middle" height=330px id="expert">
+		</a>
+		<p>Ціна автомобіля розрахована. Усі дані наведені нижче.</p>
+		<div name="data-input">
+			<table>
+				<caption class="table_title">Характеристики автомобіля</caption>
+				<tr><th>Параметр</th><th>Значення</th></tr>
+				{% for key in input %}
+					<tr><td class="td_bold">{{key}}</td><td>{{input[key][0]}}</td></tr>
+				{% endfor %}
+			</table>
+			<table>
+				<caption class="table_title">Прогнози окремих моделей</caption>
+				<tr><th>Модель</th><th>Прогноз</th></tr>
+				<tr><td class="td_bold">Random Forest</td><td>{{prices[0]}}</td></tr>
+				<tr><td class="td_bold">Gradient Boosting</td><td>{{prices[1]}}</td></tr>
+				<tr><td class="td_bold">Neural Network</td><td>{{prices[2]}}</td></tr>
+			</table>
+			<h3>Кінцева ціна автомобіля: <span id="fin_price">{{prices[3]}}$</span></h3>
+		<div>
+	</body>
+</html>
